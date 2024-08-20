@@ -23,6 +23,7 @@ type Message struct {
 }
 
 func PublishMqttTopics(mqttClient mqtt.Client, param Message) {
+	fmt.Println()
 
 	if param.MerchantId != 0 {
 		topic := fmt.Sprintf("yls/%d/%d/%d/%s", param.MerchantId, param.RequirementId, param.WaybillId, param.Action)
